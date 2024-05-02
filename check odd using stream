@@ -1,20 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
 import java.util.ArrayList;
-public class HelloWorld {
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Try programiz.pro");
-         ArrayList<Integer> intt = new  ArrayList<Integer>();
-         intt.add(111);
+       ArrayList<Integer> intt = new  ArrayList<Integer>();
+         intt.add(118);
          intt.add(11);
-          intt.add(10);
-    System.out.println(onlyOddNumbers(intt));
+          intt.add(1);
+          
+          System.out.println( intt.stream().allMatch(x-> x%2!=0 ) );
+          
+          String s="yyyy";
+          System.out.println( s.toLowerCase().matches(".*[aeiou].*" ) );
+          
+          IntStream test= s.chars();
+          Stream<Character> testStream= test.mapToObj(c->(char)c );
+          List<Character> testchar = testStream.collect(Collectors.toList());
+          System.out.println(testchar);
+          
+          
+          
+    
     }
-   
-
-public static boolean onlyOddNumbers(ArrayList<Integer> list) {
-	return list
-			.stream() // parallel stream for faster processing
-			.allMatch(x -> x % 2!= 0); 
-// Stream allMatch(Predicate predicate) returns whether all elements of this stream match the provided predicate. 
-//It may not evaluate the predicate on all elements if not necessary for determining the result. This is a short-circuiting terminal operation.
-}
 }
