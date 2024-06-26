@@ -1,0 +1,10 @@
+.app{
+  margin: auto;
+  width: 50%;
+  border: 2px solid gray;
+  padding: 10px;
+}
+.app li {
+  border: 3px solid green;
+  padding: 10px;
+}
